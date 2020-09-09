@@ -1,4 +1,5 @@
 {"flowers":[{"flowerKind":"CHRIZANTHEMUM","FlowerLength":"20","Color":"ORANGE","ID":"4","LocalDate":"2020-08-25","Cost":"12"}
-, {"flowerKind":"TULIP","FlowerLength":"20","Color":"ORANGE","ID":"4","LocalDate":"2020-08-25","Cost":"12"}],
-  "accessories": []
+, {"flowerKind":"TULIP","FlowerLength":"20","Color":"ORANGE","ID":"3","LocalDate":"2020-08-23","Cost":"15"}
+  {"flowerKind":"ROSE","FlowerLength":"30","Color":"RED","ID":"1","LocalDate":"2020-08-21","Cost":"18"}],
+  "accessories": [{"accessoryKind":"RIBBON","Color":"RED", "ID":"1", "Cost":5}]
 }
