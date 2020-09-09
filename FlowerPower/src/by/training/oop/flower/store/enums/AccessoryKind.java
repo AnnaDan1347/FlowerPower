@@ -9,9 +9,9 @@ public enum AccessoryKind {
     OTHER_ACCESSORY("");
 
     private String name;
-
+    
     AccessoryKind(String name) {
-        this.name = name;
+        this.setName(name);
     }
 
     public static AccessoryKind getAccessoryKind(String name) {
@@ -22,6 +22,8 @@ public enum AccessoryKind {
         }
         return OTHER_ACCESSORY;
     }
-    
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
