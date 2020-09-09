@@ -36,4 +36,9 @@ public class Flower extends Good {
     public boolean isInInterval(int leftBound, int rightBound) {
         return length.getLength() >= leftBound && length.getLength() <= rightBound;
     }
+
+    public static Color getColor(String string) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

@@ -1,7 +1,9 @@
 package by.training.oop.flower.store.application;
 
+import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Flower;
-import by.training.oop.flower.store.prices.CreatingJSONDocument;
+import by.training.oop.flower.store.prices.ReadAccessoryFromJSON;
+import by.training.oop.flower.store.prices.ReadFlowerFromJSON;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,13 +16,25 @@ public class Office {
 
     public void run() {
         store = new Store();
-        CreatingJSONDocument loader = new CreatingJSONDocument();
+        ReadFlowerFromJSON loader = new ReadFlowerFromJSON();
         loader.readFileToStore(store);
+        System.out.println("Hello! Today our product range offers:");
         store.getGoods().forEach(good -> {
             Flower flower = (Flower) good;
-            System.out.println(flower.getFlowerKind());
-            System.out.println(flower.getLength());
+            System.out.println(flower.getColor() + "  " + flower.getFlowerKind());
+            //System.out.println(flower.getLength());
+            
         });
+        System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the name below");
+        
+//        store = new Store();
+//        ReadAccessoryFromJSON reader = new ReadAccessoryFromJSON();
+//        store.getGoods().forEach(good -> {
+//            Accessory accessory = (Accessory) good;
+//            System.out.println(accessory.getAccessoryKind());            
+//        });
+        
+        
 //        Scanner scanner = new Scanner(System.in);
 //        while (runFlag) {
 //            System.out.println("Input smth, or \"exit\" for exit");
