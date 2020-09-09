@@ -1,6 +1,5 @@
 package by.training.oop.flower.store.enums;
 
-import by.training.oop.flower.store.model.FlowerLength;
 
 public enum FlowerKind {
     ROSE(""),
@@ -12,7 +11,7 @@ public enum FlowerKind {
     private String name;
 
     FlowerKind(String name) {
-        this.name = name;
+        this.setName(name);
     }
 
     public static FlowerKind getFlowerKind(String name) {
@@ -22,5 +21,13 @@ public enum FlowerKind {
             }
         }
         return OTHER_FLOWER;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
