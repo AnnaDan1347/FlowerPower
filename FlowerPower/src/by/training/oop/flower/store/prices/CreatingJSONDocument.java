@@ -9,9 +9,12 @@ import java.util.List;
 
 import by.training.oop.flower.store.application.Store;
 import by.training.oop.flower.store.enums.FlowerKind;
+
 import by.training.oop.flower.store.model.Flower;
 import by.training.oop.flower.store.model.FlowerLength;
 import by.training.oop.flower.store.model.Good;
+import by.training.oop.flower.store.model.Color;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -92,6 +95,7 @@ public class CreatingJSONDocument {
             flowers.add(flower);
             flower.setFlowerKind(FlowerKind.getFlowerKind((String) flowerJ.get("flowerKind")));
             flower.setLength(FlowerLength.getLength((String) flowerJ.get("FlowerLength")));
+            flower.setColor(Color.getColor((String) flowerJ.get("Color")));
         }
         return flowers;
     }
