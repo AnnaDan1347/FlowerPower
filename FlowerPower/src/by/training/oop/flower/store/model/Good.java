@@ -4,6 +4,19 @@ import java.awt.*;
 
 public abstract class Good {
     private Color color;
+    private Integer cost;
+
+    public Integer getCost() {
+        return cost;
+    }
+
+
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
+
+
 
     public Color getColor() {
         return color;
