@@ -22,7 +22,8 @@ public class Office {
         store.getGoods().forEach(good -> {
             Flower flower = (Flower) good;
             System.out.println(flower.getColor() + "  " + flower.getFlowerKind());
-            //System.out.println(flower.getLength());
+            System.out.println(flower.getLength());
+            System.out.println(flower.getCost());
             
         });
         System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the name below");

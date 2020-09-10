@@ -17,6 +17,7 @@ import by.training.oop.flower.store.model.Good;
 import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Color;
 
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -73,6 +74,7 @@ public class ReadFlowerFromJSON {
             flower.setFlowerKind(FlowerKind.getFlowerKind((String) flowerJ.get("flowerKind")));
             flower.setLength(FlowerLength.getLength((String) flowerJ.get("FlowerLength")));
             flower.setColor(Color.getColor((String) flowerJ.get("Color")));
+            flower.setCost(Integer.parseInt((Flower.getCost((String) flowerJ.get("Cost")))));
         }
         return flowers;
     }

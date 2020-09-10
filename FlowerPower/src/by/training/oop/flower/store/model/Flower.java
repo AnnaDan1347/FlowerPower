@@ -8,10 +8,31 @@ public class Flower extends Good {
     FlowerKind flowerKind;
     LocalDate shipmentDate;
     FlowerLength length;
+    Color color;
+    Integer cost;
 
     public FlowerKind getFlowerKind() {
         return flowerKind;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
+    
+    public static String getCost(String name) {
+        return name;}
 
     public void setFlowerKind(FlowerKind flowerKind) {
         this.flowerKind = flowerKind;
@@ -41,4 +62,9 @@ public class Flower extends Good {
         // TODO Auto-generated method stub
         return null;
     }
+
+
+
+    
+    
 }
