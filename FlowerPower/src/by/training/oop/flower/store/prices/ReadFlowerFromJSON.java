@@ -45,7 +45,7 @@ public class ReadFlowerFromJSON {
 
     public void readFileToStore(Store store) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(STORAGE_FILE_NAME));
-        store.setGoods(readFlowers(jsonObject));
+        store.setFlowers(readFlowers(jsonObject));
     }
 
     private String readStringFromFile(String fileName) {
@@ -64,9 +64,9 @@ public class ReadFlowerFromJSON {
         return stringBuilder.toString();
     }
 
-    private List<Good> readFlowers(JSONObject data) {
+    private List<Flower> readFlowers(JSONObject data) {
         JSONArray flowersJ = (JSONArray) data.get("flowers");
-        List<Good> flowers = new ArrayList<>();
+        List<Flower> flowers = new ArrayList<>();
         for (var item : flowersJ) {
             JSONObject flowerJ = (JSONObject) item;
             Flower flower = new Flower();
@@ -79,17 +79,17 @@ public class ReadFlowerFromJSON {
         return flowers;
     }
 
-//    private List<Good> readAccessories(JSONObject data) {
-//        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
-//        List<Good> accessories = new ArrayList<>();
-//        for (var item : accessoriesJ) {
-//            JSONObject accessoryJ = (JSONObject) item;
-//            Accessory accessory = new Accessory();
-//            accessories.add(accessory);
-//            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
-//            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
-//        }
-//        return accessories;
-//    }
+    private List<Accessory> readAccessories(JSONObject data) {
+        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
+        List<Accessory> accessories = new ArrayList<>();
+        for (var item : accessoriesJ) {
+            JSONObject accessoryJ = (JSONObject) item;
+            Accessory accessory = new Accessory();
+            accessories.add(accessory);
+            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
+            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
+        }
+        return accessories;
+    }
 
 }

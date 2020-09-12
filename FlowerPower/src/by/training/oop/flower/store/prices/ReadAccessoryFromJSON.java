@@ -44,7 +44,7 @@ public class ReadAccessoryFromJSON {
 
     public void readFileToStore(Store store) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(STORAGE_FILE_NAME));
-        store.setGoods(readAccessories(jsonObject));
+        store.setAccessories(readAccessories(jsonObject));
     }
 
     private String readStringFromFile(String fileName) {
@@ -63,9 +63,9 @@ public class ReadAccessoryFromJSON {
         return stringBuilder.toString();
     }
 
-    private List<Good> readAccessories(JSONObject data) {
+    private List<Accessory> readAccessories(JSONObject data) {
         JSONArray accessoriesJ = (JSONArray) data.get("accessories");
-        List<Good> accessories = new ArrayList<>();
+        List<Accessory> accessories = new ArrayList<>();
         for (var item : accessoriesJ) {
             JSONObject accessoryJ = (JSONObject) item;
             Accessory accessory = new Accessory();
