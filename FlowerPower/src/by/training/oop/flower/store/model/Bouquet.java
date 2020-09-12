@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 //класс находит цветок с длиной стебля из заданного интервала
 public class Bouquet {
+    
     List<Good> positions;
     Map<Integer, Integer> priceList;
 
