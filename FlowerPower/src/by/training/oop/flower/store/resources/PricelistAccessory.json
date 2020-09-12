@@ -1,2 +1,2 @@
-{"accessories": [{"accessoryKind":"RIBBON","Color":"RED", "ID":"1", "Cost":5}]
+{"accessories": [{"ID":"1", "accessoryKind":"RIBBON","Color":"RED", "Cost":"5"}]
 }

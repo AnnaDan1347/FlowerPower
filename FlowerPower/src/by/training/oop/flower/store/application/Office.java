@@ -10,30 +10,32 @@ import java.util.Scanner;
 
 public class Office {
 
-    private Store store;
+    private Store flower;
+    private Store accessory;
 
     private boolean runFlag = true;
 
     public void run() {
-        store = new Store();
+        flower = new Store();
+        accessory = new Store();
         ReadFlowerFromJSON loader = new ReadFlowerFromJSON();
-        loader.readFileToStore(store);
+        loader.readFlowerToStore(flower);
         System.out.println("Hello! Today our product range offers:");
-        store.getFlowers().forEach(good -> {
+        flower.getFlowers().forEach(good -> {
             Flower flower = (Flower) good;
-            System.out.println(flower.getColor() + "  " + flower.getFlowerKind());
+            System.out.println(flower.getId() + " " + flower.getColor() + "  " + flower.getFlowerKind());
             System.out.println(flower.getLength());
             System.out.println(flower.getCost());
             
         });
-        System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the name below");
+        System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the ID below");
         
 
         ReadAccessoryFromJSON reader = new ReadAccessoryFromJSON();
-        reader.readFileToStore(store);
-        store.getAccessories().forEach(good -> {
+        reader.readAccessoryToStore(accessory);
+        accessory.getAccessories().forEach(good -> {
             Accessory accessory = (Accessory) good;
-            System.out.println(accessory.getAccessoryKind());            
+            System.out.println(accessory.getId()+ " " + accessory.getAccessoryKind() + accessory.getCost());            
         });
         
         

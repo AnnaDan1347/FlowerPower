@@ -26,25 +26,27 @@ public class ReadAccessoryFromJSON {
 
     private static final String STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/PricelistAccessory.json";
 
-    public void writeFromStoreToFile(Store store) {
-        // Creating a JSONObject object
-        JSONObject jsonObject = new JSONObject();
-        // Inserting key-value pairs into the JSON object
+//    public void writeFromStoreToFile(Store store) {
+//        // Creating a JSONObject object
+//        JSONObject jsonObject = new JSONObject();
+//        // Inserting key-value pairs into the JSON object
+//
+//        try {
+//            FileWriter file = new FileWriter(STORAGE_FILE_NAME);
+//            file.write(jsonObject.toJSONString());
+//            file.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("JSON file created: " + jsonObject);
+//
+//    }
+    
+    
 
-        try {
-            FileWriter file = new FileWriter(STORAGE_FILE_NAME);
-            file.write(jsonObject.toJSONString());
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("JSON file created: " + jsonObject);
-
-    }
-
-    public void readFileToStore(Store store) {
+    public void readAccessoryToStore(Store accessory) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(STORAGE_FILE_NAME));
-        store.setAccessories(readAccessories(jsonObject));
+        accessory.setAccessories(readAccessories(jsonObject));
     }
 
     private String readStringFromFile(String fileName) {
@@ -72,6 +74,8 @@ public class ReadAccessoryFromJSON {
             accessories.add(accessory);
             accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
             accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
+            accessory.setId(Integer.parseInt((Accessory.getId((String) accessoryJ.get("ID")))));
+            accessory.setCost(Integer.parseInt((Accessory.getCost((String) accessoryJ.get("Cost")))));
         }
         return accessories;
     }

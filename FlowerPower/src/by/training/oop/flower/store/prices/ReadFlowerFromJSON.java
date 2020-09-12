@@ -27,23 +27,23 @@ public class ReadFlowerFromJSON {
 
     private static final String STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/Pricelist.json";
 
-    public void writeFromStoreToFile(Store store) {
-        // Creating a JSONObject object
-        JSONObject jsonObject = new JSONObject();
-        // Inserting key-value pairs into the JSON object
+//    public void writeFromStoreToFile(Store store) {
+//        // Creating a JSONObject object
+//        JSONObject jsonObject = new JSONObject();
+//        // Inserting key-value pairs into the JSON object
+//
+//        try {
+//            FileWriter file = new FileWriter(STORAGE_FILE_NAME);
+//            file.write(jsonObject.toJSONString());
+//            file.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("JSON file created: " + jsonObject);
+//
+//    }
 
-        try {
-            FileWriter file = new FileWriter(STORAGE_FILE_NAME);
-            file.write(jsonObject.toJSONString());
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("JSON file created: " + jsonObject);
-
-    }
-
-    public void readFileToStore(Store store) {
+    public void readFlowerToStore(Store store) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(STORAGE_FILE_NAME));
         store.setFlowers(readFlowers(jsonObject));
     }
@@ -71,6 +71,7 @@ public class ReadFlowerFromJSON {
             JSONObject flowerJ = (JSONObject) item;
             Flower flower = new Flower();
             flowers.add(flower);
+            flower.setId(Integer.parseInt((Flower.getId((String) flowerJ.get("ID")))));
             flower.setFlowerKind(FlowerKind.getFlowerKind((String) flowerJ.get("flowerKind")));
             flower.setLength(FlowerLength.getLength((String) flowerJ.get("FlowerLength")));
             flower.setColor(Color.getColor((String) flowerJ.get("Color")));
@@ -79,17 +80,19 @@ public class ReadFlowerFromJSON {
         return flowers;
     }
 
-    private List<Accessory> readAccessories(JSONObject data) {
-        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
-        List<Accessory> accessories = new ArrayList<>();
-        for (var item : accessoriesJ) {
-            JSONObject accessoryJ = (JSONObject) item;
-            Accessory accessory = new Accessory();
-            accessories.add(accessory);
-            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
-            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
-        }
-        return accessories;
-    }
+//    private List<Accessory> readAccessories(JSONObject data) {
+//        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
+//        List<Accessory> accessories = new ArrayList<>();
+//        for (var item : accessoriesJ) {
+//            JSONObject accessoryJ = (JSONObject) item;
+//            Accessory accessory = new Accessory();
+//            accessories.add(accessory);
+//            accessory.setId(Integer.parseInt((Accessory.getId((String) accessoryJ.get("ID")))));
+//            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
+//            accessory.setCost(Integer.parseInt((Accessory.getCost((String) accessoryJ.get("Cost")))));
+//            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
+//        }
+//        return accessories;
+//    }
 
 }
