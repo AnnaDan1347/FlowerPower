@@ -1,9 +1,9 @@
 {"flowers":[
-    {"ID":"11111","flowerKind":"CHRIZANTHEMUM","FlowerLength":"20","Color":"ORANGE","LocalDate":"2020-08-25","Cost":"1200"}
-    {"ID":"22222","flowerKind":"TULIP","FlowerLength":"10","Color":"RED","LocalDate":"2020-08-23","Cost":"1500"}
-    {"ID":"33333","flowerKind":"TULIP","FlowerLength":"10","Color":"YELLOW","LocalDate":"2020-08-25","Cost":"1500"}
-    {"ID":"44444","flowerKind":"ROSE","FlowerLength":"30","Color":"WHITE","LocalDate":"2020-08-21","Cost":"1800"}
-    {"ID":"55555","flowerKind":"ROSE","FlowerLength":"20","Color":"YELLOW","LocalDate":"2020-08-21","Cost":"1500"}
-    {"ID":"66666","flowerKind":"LILAC","FlowerLength":"30","Color":"WHITE","LocalDate":"2020-08-24","Cost":"2000"}
-    {"ID":"77777","flowerKind":"LILAC","FlowerLength":"30","Color":"ORANGE","LocalDate":"2020-08-23","Cost":"2000"}]
+    {"ID":"1","flowerKind":"CHRIZANTHEMUM","FlowerLength":"20","Color":"ORANGE","LocalDate":"2020-08-25","Cost":"1200"}
+    {"ID":"2","flowerKind":"TULIP","FlowerLength":"10","Color":"RED","LocalDate":"2020-08-23","Cost":"1500"}
+    {"ID":"3","flowerKind":"TULIP","FlowerLength":"10","Color":"YELLOW","LocalDate":"2020-08-25","Cost":"1500"}
+    {"ID":"4","flowerKind":"ROSE","FlowerLength":"30","Color":"WHITE","LocalDate":"2020-08-21","Cost":"1800"}
+    {"ID":"5","flowerKind":"ROSE","FlowerLength":"20","Color":"YELLOW","LocalDate":"2020-08-21","Cost":"1500"}
+    {"ID":"6","flowerKind":"LILAC","FlowerLength":"30","Color":"WHITE","LocalDate":"2020-08-24","Cost":"2000"}
+    {"ID":"7","flowerKind":"LILAC","FlowerLength":"30","Color":"ORANGE","LocalDate":"2020-08-23","Cost":"2000"}]
 }

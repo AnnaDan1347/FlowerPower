@@ -5,6 +5,10 @@ import by.training.oop.flower.store.model.Flower;
 import by.training.oop.flower.store.prices.ReadAccessoryFromJSON;
 import by.training.oop.flower.store.prices.ReadFlowerFromJSON;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,7 +33,24 @@ public class Office {
             
         });
         System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the ID below");
-        
+        List<Integer> id = new ArrayList<Integer>();
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String s;
+            try {
+                while ((s = br.readLine()) != "end") {
+        id.add(Integer.parseInt(s));
+                }
+            } catch (NumberFormatException e) {
+
+                e.printStackTrace();
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            } 
+        int n = id.size();
+        for(int i=0; i<n; i++) {
+            System.out.println(id.get(i));
+        }
 
         ReadAccessoryFromJSON reader = new ReadAccessoryFromJSON();
         reader.readAccessoryToStore(accessory);
