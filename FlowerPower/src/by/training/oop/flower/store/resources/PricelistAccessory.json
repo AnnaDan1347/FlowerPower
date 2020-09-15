@@ -1,2 +1,11 @@
-{"accessories": [{"ID":"1", "accessoryKind":"RIBBON","Color":"RED", "Cost":"5"}]
+{"accessories": [{"ID":"11", "accessoryKind":"RIBBON","Color":"RED", "Cost":"5"}
+{"ID":"12", "accessoryKind":"RIBBON","Color":"ORANGE", "Cost":"5"}
+{"ID":"13", "accessoryKind":"RIBBON","Color":"YELLOW", "Cost":"5"}
+{"ID":"14", "accessoryKind":"RIBBON","Color":"WHITE", "Cost":"5"}
+{"ID":"20", "accessoryKind":"RIBBON","Color":"RED", "Cost":"5"}
+{"ID":"15", "accessoryKind":"PAPER","Color":"ORANGE", "Cost":"6"}
+{"ID":"16", "accessoryKind":"PAPER","Color":"RED", "Cost":"6"}
+{"ID":"17", "accessoryKind":"PAPER","Color":"WHITE", "Cost":"6"}
+{"ID":"18", "accessoryKind":"PAPER","Color":"YELLOW", "Cost":"6"}
+{"ID":"19", "accessoryKind":"POSTCARD","Color":"WHITE", "Cost":"7"}]
 }

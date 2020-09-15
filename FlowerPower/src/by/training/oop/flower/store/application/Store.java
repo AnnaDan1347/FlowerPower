@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Store {
     public List<Flower> flowers;
-    private List<Accessory> accessories;
+    public  List<Accessory> accessories;
 
 
     public List<Accessory> getAccessories() {
@@ -26,4 +26,15 @@ public class Store {
     public void setFlowers(List<Flower> flowers) {
         this.flowers = flowers;
     }
+    public static Flower findFlowerById(
+            Integer name, List<Flower> flowers) {
+
+              for (Flower flower : flowers) {
+                  
+                  if (flower.getId().equals(name)) {
+                      return flower;
+                  }
+              }
+              return null;
+          }
 }

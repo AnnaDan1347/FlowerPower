@@ -35,13 +35,17 @@ public class Office {
             
         });
         System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the ID below");
-        List<Integer> id = new ArrayList<Integer>();
+        //List<Integer> id = new ArrayList<Integer>();
+        List<Good> bouquet = new ArrayList<Good>();
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String s;
+          
             try {
                 while ((s = br.readLine()) != "end") {
+                    bouquet.add(Store.findFlowerById((Integer.valueOf(s)), flower.getFlowers()));
+                    System.out.println((Store.findFlowerById((Integer.valueOf(s)), flower.getFlowers())).getCost());
                     
-        id.add(Integer.parseInt(s));
+        //id.add(Integer.parseInt(s));
                 }
             } catch (NumberFormatException e) {
 
@@ -50,10 +54,17 @@ public class Office {
 
                 e.printStackTrace();
             } 
-        int n = id.size();
-        for(int i=0; i<n; i++) {
-            System.out.println(id.get(i));
-        }
+            
+//            int n = bouquet.size();
+//            Integer cost = 0;
+//          for(int i=0; i<n; i++) {
+//              cost=cost + bouquet[i].getFlowers().getCost();
+//              System.out.println((bouquet.get(i)) + "b ");
+//          }
+//        int n = id.size();
+//        for(int i=0; i<n; i++) {
+//            System.out.println(id.get(i));
+//        }
         
             
         
@@ -62,7 +73,8 @@ public class Office {
         reader.readAccessoryToStore(accessory);
         accessory.getAccessories().forEach(good -> {
             Accessory accessory = (Accessory) good;
-            System.out.println(accessory.getId()+ " " + accessory.getAccessoryKind() + accessory.getCost());            
+            System.out.println(accessory.getId()+ " " + accessory.getColor() + " " + 
+            accessory.getAccessoryKind() + " " + accessory.getCost());  
         });
         
         
