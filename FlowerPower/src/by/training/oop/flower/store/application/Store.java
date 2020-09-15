@@ -7,7 +7,7 @@ import by.training.oop.flower.store.model.Good;
 import java.util.List;
 
 public class Store {
-    private List<Flower> flowers;
+    public List<Flower> flowers;
     private List<Accessory> accessories;
 
 

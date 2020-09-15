@@ -2,6 +2,7 @@ package by.training.oop.flower.store.application;
 
 import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Flower;
+import by.training.oop.flower.store.model.Good;
 import by.training.oop.flower.store.prices.ReadAccessoryFromJSON;
 import by.training.oop.flower.store.prices.ReadFlowerFromJSON;
 
@@ -30,6 +31,7 @@ public class Office {
             System.out.println(flower.getId() + " " + flower.getColor() + "  " + flower.getFlowerKind());
             System.out.println(flower.getLength());
             System.out.println(flower.getCost());
+            System.out.println(flower.getShipmentDate());
             
         });
         System.out.println("Which flower do you prefer to add to your bouquet? Please, enter the ID below");
@@ -38,6 +40,7 @@ public class Office {
             String s;
             try {
                 while ((s = br.readLine()) != "end") {
+                    
         id.add(Integer.parseInt(s));
                 }
             } catch (NumberFormatException e) {
@@ -51,6 +54,9 @@ public class Office {
         for(int i=0; i<n; i++) {
             System.out.println(id.get(i));
         }
+        
+            
+        
 
         ReadAccessoryFromJSON reader = new ReadAccessoryFromJSON();
         reader.readAccessoryToStore(accessory);

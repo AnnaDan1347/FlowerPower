@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +77,7 @@ public class ReadFlowerFromJSON {
             flower.setLength(FlowerLength.getLength((String) flowerJ.get("FlowerLength")));
             flower.setColor(Color.getColor((String) flowerJ.get("Color")));
             flower.setCost(Integer.parseInt((Flower.getCost((String) flowerJ.get("Cost")))));
+            flower.setShipmentDate(LocalDate.parse((Flower.getShipmentDate((String) flowerJ.get("LocalDate")))));
         }
         return flowers;
     }

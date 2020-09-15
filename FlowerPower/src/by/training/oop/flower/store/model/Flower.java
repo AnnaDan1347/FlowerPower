@@ -20,6 +20,10 @@ public class Flower extends Good {
 //        this.id = id;
 //    }
 
+    public LocalDate getShipmentDate() {
+        return shipmentDate;
+    }
+
     public FlowerKind getFlowerKind() {
         return flowerKind;
     }
@@ -50,13 +54,14 @@ public class Flower extends Good {
         this.flowerKind = flowerKind;
     }
 
-    public LocalDate getShipmentDate() {
-        return shipmentDate;
+    public static String getShipmentDate(String string) {
+        return string;
     }
 
     public void setShipmentDate(LocalDate shipmentDate) {
         this.shipmentDate = shipmentDate;
     }
+    
 
     public FlowerLength getLength() {
         return length;
@@ -69,6 +74,12 @@ public class Flower extends Good {
     public boolean isInInterval(int leftBound, int rightBound) {
         return length.getLength() >= leftBound && length.getLength() <= rightBound;
     }
+}
+
+
+
+//    public static String getShipmentDate(String name) {
+//        return name;}
 
 //    public static Color getColor(String string) {
 //        // TODO Auto-generated method stub
@@ -77,6 +88,3 @@ public class Flower extends Good {
 
 
 
-    
-    
-}
