@@ -29,10 +29,20 @@ public class Store {
     public Flower findFlowerById(Integer name) {
 
         for (Flower flower : flowers) {
-            //System.out.println(flower.getId() + "for");
 
             if (flower.getId() == name) {
                 return flower;
+            } 
+        }
+        return null;
+    }
+    
+    public Accessory findAccessoryById(Integer name) {
+
+        for (Accessory accessory : accessories) {
+
+            if (accessory.getId() == name) {
+                return accessory;
             } 
         }
         return null;

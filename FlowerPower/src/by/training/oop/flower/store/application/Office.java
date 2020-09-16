@@ -22,8 +22,6 @@ public class Office {
     private ReadFromJSON reader;
 
     List<Good> currentBouquet;
-    
-    Integer calculatePrice;
 
     public Office() {
         store = new Store();
@@ -80,6 +78,9 @@ public class Office {
 
                     if (flower != null) {
                         currentBouquet.add(flower);
+                    }else
+                    {
+                        System.out.println("Wrong ID");
                     }
 
                 }
