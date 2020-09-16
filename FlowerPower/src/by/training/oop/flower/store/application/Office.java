@@ -38,22 +38,24 @@ public class Office {
         //List<Integer> id = new ArrayList<Integer>();
         List<Good> bouquet = new ArrayList<Good>();
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String s;
+            String s = null;
           
-            try {
-                while ((s = br.readLine()) != "end") {
+            
+                while (s != "end") {
+                    try {
+                    s = br.readLine();
                     bouquet.add(Store.findFlowerById((Integer.valueOf(s)), flower.getFlowers()));
-                    System.out.println((Store.findFlowerById((Integer.valueOf(s)), flower.getFlowers())).getCost());
+                    //System.out.println((Store.findFlowerById((Integer.valueOf(s)), flower.getFlowers())).getCost());
                     
         //id.add(Integer.parseInt(s));
-                }
+                 
             } catch (NumberFormatException e) {
 
                 e.printStackTrace();
             } catch (IOException e) {
 
                 e.printStackTrace();
-            } 
+            } }
             
 //            int n = bouquet.size();
 //            Integer cost = 0;

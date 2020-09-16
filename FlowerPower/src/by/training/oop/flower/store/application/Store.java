@@ -9,6 +9,7 @@ import java.util.List;
 public class Store {
     public List<Flower> flowers;
     public  List<Accessory> accessories;
+    public List<Good> bouquet;
 
 
     public List<Accessory> getAccessories() {
@@ -30,10 +31,14 @@ public class Store {
             Integer name, List<Flower> flowers) {
 
               for (Flower flower : flowers) {
+                  System.out.println(flower.getId() + "for");
                   
                   if (flower.getId().equals(name)) {
                       return flower;
-                  }
+                  }else
+                  
+                      System.out.println("Wrong ID");
+                  
               }
               return null;
           }
