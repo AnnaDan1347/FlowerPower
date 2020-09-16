@@ -7,10 +7,8 @@ import by.training.oop.flower.store.model.Good;
 import java.util.List;
 
 public class Store {
-    public List<Flower> flowers;
-    public  List<Accessory> accessories;
-    public List<Good> bouquet;
-
+    private List<Flower> flowers;
+    private List<Accessory> accessories;
 
     public List<Accessory> getAccessories() {
         return accessories;
@@ -27,19 +25,16 @@ public class Store {
     public void setFlowers(List<Flower> flowers) {
         this.flowers = flowers;
     }
-    public static Flower findFlowerById(
-            Integer name, List<Flower> flowers) {
 
-              for (Flower flower : flowers) {
-                  System.out.println(flower.getId() + "for");
-                  
-                  if (flower.getId().equals(name)) {
-                      return flower;
-                  }else
-                  
-                      System.out.println("Wrong ID");
-                  
-              }
-              return null;
-          }
+    public Flower findFlowerById(Integer name) {
+
+        for (Flower flower : flowers) {
+            //System.out.println(flower.getId() + "for");
+
+            if (flower.getId() == name) {
+                return flower;
+            } 
+        }
+        return null;
+    }
 }

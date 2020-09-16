@@ -24,10 +24,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 
-public class ReadFlowerFromJSON {
+public class ReadFromJSON {
 
-    private static final String STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/Pricelist.json";
-
+    private static final String FLOWER_STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/Pricelist.json";
+    private static final String ACCESSORY_STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/PricelistAccessory.json";
 //    public void writeFromStoreToFile(Store store) {
 //        // Creating a JSONObject object
 //        JSONObject jsonObject = new JSONObject();
@@ -45,8 +45,12 @@ public class ReadFlowerFromJSON {
 //    }
 
     public void readFlowerToStore(Store store) {
-        JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(STORAGE_FILE_NAME));
+        JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(FLOWER_STORAGE_FILE_NAME));
         store.setFlowers(readFlowers(jsonObject));
+    }
+    public void readAccessoryToStore(Store accessory) {
+        JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(ACCESSORY_STORAGE_FILE_NAME));
+        accessory.setAccessories(readAccessories(jsonObject));
     }
 
     private String readStringFromFile(String fileName) {
@@ -81,20 +85,24 @@ public class ReadFlowerFromJSON {
         }
         return flowers;
     }
+    
+    private List<Accessory> readAccessories(JSONObject data) {
+        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
+        List<Accessory> accessories = new ArrayList<>();
+        for (var item : accessoriesJ) {
+            JSONObject accessoryJ = (JSONObject) item;
+            Accessory accessory = new Accessory();
+            accessories.add(accessory);
+            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
+            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
+            accessory.setId(Integer.parseInt((Accessory.getId((String) accessoryJ.get("ID")))));
+            accessory.setCost(Integer.parseInt((Accessory.getCost((String) accessoryJ.get("Cost")))));
+        }
+        return accessories;
+    }
+    
+    
+    
 
-//    private List<Accessory> readAccessories(JSONObject data) {
-//        JSONArray accessoriesJ = (JSONArray) data.get("accessories");
-//        List<Accessory> accessories = new ArrayList<>();
-//        for (var item : accessoriesJ) {
-//            JSONObject accessoryJ = (JSONObject) item;
-//            Accessory accessory = new Accessory();
-//            accessories.add(accessory);
-//            accessory.setId(Integer.parseInt((Accessory.getId((String) accessoryJ.get("ID")))));
-//            accessory.setAccessoryKind(AccessoryKind.getAccessoryKind((String) accessoryJ.get("accessoryKind")));
-//            accessory.setCost(Integer.parseInt((Accessory.getCost((String) accessoryJ.get("Cost")))));
-//            accessory.setColor(Color.getColor((String) accessoryJ.get("Color")));
-//        }
-//        return accessories;
-//    }
 
 }

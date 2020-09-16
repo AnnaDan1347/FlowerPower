@@ -10,7 +10,14 @@ import java.util.stream.Collectors;
 public class Bouquet {
     
     List<Good> positions;
-    Map<Integer, Integer> priceList;
+    
+
+
+    public Bouquet(List<Good> positions) {
+        this.positions = positions;
+    }
+
+
 
     public List<Flower> getFlowersInInterval(int leftBound, int rightBound) {
         return positions.stream()
@@ -22,7 +29,7 @@ public class Bouquet {
 
     public Integer calculatePrice() {
         return positions.stream()
-                .mapToInt(good -> priceList.get(good))
+                .mapToInt(good -> good.getCost())
                 .sum();
     }
 }
