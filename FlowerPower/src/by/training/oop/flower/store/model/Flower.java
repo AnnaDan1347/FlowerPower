@@ -5,7 +5,7 @@ import by.training.oop.flower.store.enums.FlowerKind;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Flower extends Good {
+public class Flower extends Good implements Comparable<Flower>{
     FlowerKind flowerKind;
     LocalDate shipmentDate;
     FlowerLength length;
@@ -75,6 +75,14 @@ public class Flower extends Good {
 
     public boolean isInInterval(int leftBound, int rightBound) {
         return length.getLength() >= leftBound && length.getLength() <= rightBound;
+    }
+
+    @Override
+    
+public int compareTo(Flower f) {
+        if (getShipmentDate() == null || f.getShipmentDate() == null)
+            return 0;
+        return getShipmentDate().compareTo(f.getShipmentDate());
     }
 }
 
