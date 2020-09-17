@@ -32,4 +32,13 @@ public class Bouquet {
                 .mapToInt(good -> good.getCost())
                 .sum();
     }
+    
+    public void printCheck() {
+        System.out.println("Check");
+        positions.stream()
+                .forEach(good -> System.out.println(good.getId() + " " + good.getCost()));
+        
+        
+    }
+
 }

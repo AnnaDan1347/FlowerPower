@@ -3,6 +3,7 @@ package by.training.oop.flower.store.model;
 import by.training.oop.flower.store.enums.FlowerKind;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Flower extends Good {
     FlowerKind flowerKind;
@@ -20,6 +21,7 @@ public class Flower extends Good {
 //        this.id = id;
 //    }
 
+   
     public LocalDate getShipmentDate() {
         return shipmentDate;
     }
