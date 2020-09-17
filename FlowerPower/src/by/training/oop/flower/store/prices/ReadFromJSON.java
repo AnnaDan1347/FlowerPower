@@ -2,7 +2,6 @@ package by.training.oop.flower.store.prices;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,14 +13,12 @@ import by.training.oop.flower.store.enums.FlowerKind;
 
 import by.training.oop.flower.store.model.Flower;
 import by.training.oop.flower.store.model.FlowerLength;
-import by.training.oop.flower.store.model.Good;
 import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Color;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
 
 public class ReadFromJSON {
 

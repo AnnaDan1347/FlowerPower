@@ -3,7 +3,7 @@ package by.training.oop.flower.store.model;
 import by.training.oop.flower.store.enums.FlowerKind;
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 public class Flower extends Good implements Comparable<Flower> {
     FlowerKind flowerKind;
@@ -43,10 +43,31 @@ public class Flower extends Good implements Comparable<Flower> {
     }
 
     @Override
+    public int compareTo(Flower that) {
+        int idCompare = this.getId().compareTo(that.getId());
+        if (idCompare != 0)
+            return idCompare;
 
-    public int compareTo(Flower f) {
-        if (getShipmentDate() == null || f.getShipmentDate() == null)
-            return 0;
-        return getShipmentDate().compareTo(f.getShipmentDate());
+        int flowerKindCompare = this.getFlowerKind().compareTo(that.getFlowerKind());
+        if (flowerKindCompare != 0)
+            return flowerKindCompare;
+
+        int lengthCompare = this.getLength().compareTo(that.getLength());
+        if (lengthCompare != 0)
+            return lengthCompare;
+
+        int colorCompare = this.getColor().compareTo(that.getColor());
+        if (colorCompare != 0)
+            return colorCompare;
+
+        int shipmentDateCompare = this.getShipmentDate().compareTo(that.getShipmentDate());
+        if (shipmentDateCompare != 0)
+            return shipmentDateCompare;
+
+        int priceCompare = this.getCost().compareTo(that.getCost());
+        if (priceCompare != 0)
+            return priceCompare;
+
+        return shipmentDateCompare;
     }
 }

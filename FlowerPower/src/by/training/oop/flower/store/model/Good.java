@@ -1,6 +1,6 @@
 package by.training.oop.flower.store.model;
 
-import java.awt.*;
+
 
 public abstract class Good {
     private Color color;

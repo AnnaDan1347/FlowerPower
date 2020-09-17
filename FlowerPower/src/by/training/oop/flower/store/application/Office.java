@@ -47,11 +47,8 @@ public class Office {
                     System.out.println("Hello! Today our product range offers:");
                     store.getFlowers().forEach(good -> {
                         Flower flower = (Flower) good;
-                        System.out.println(flower.getId() + " " + flower.getColor() + "  " + flower.getFlowerKind());
-                        System.out.println(flower.getLength());
-                        System.out.println(flower.getCost());
-                        System.out.println(flower.getShipmentDate());
-
+                        System.out.println(flower.getId() + " " + flower.getColor() + "  " + flower.getFlowerKind()
+                                + " " + flower.getCost());
                     });
 
                     reader.readAccessoryToStore(store);
@@ -71,12 +68,8 @@ public class Office {
                     if (currentBouquet != null && currentBouquet.size() > 0) {
                         Bouquet bouquet = new Bouquet(currentBouquet);
 
-//                        List<DateItem> dateList = new ArrayList<>();
-//                        dateList.add(new DateItem("2020-03-25"));
-//                        dateList.add(new DateItem("2019-01-27"));
-//                        dateList.add(new DateItem("2020-03-26"));
-//                        dateList.add(new DateItem("2020-02-26"));
-//                        Collections.sort(bouquet, new Bouquet[5].SortByDate());
+////                        List<DateItem> dateList = new ArrayList<>();                       
+//                        Collections.
 //                        bouquet.forEach(shipmentDate -> {
 //                            System.out.println(bouquet.shipmentDate);
 //                        });
@@ -111,7 +104,7 @@ public class Office {
 
                 default: {
                     if (currentBouquet == null) {
-                        currentBouquet = new ArrayList();
+                        currentBouquet = new ArrayList<>();
                     }
                     Flower flower = store.findFlowerById(Integer.valueOf(s));
                     Accessory accessory = store.findAccessoryById(Integer.valueOf(s));
