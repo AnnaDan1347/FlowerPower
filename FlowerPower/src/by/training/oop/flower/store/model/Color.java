@@ -1,13 +1,7 @@
 package by.training.oop.flower.store.model;
 
-
-
 public enum Color {
-    ORANGE(""),
-    RED(""),
-    WHITE(""),
-    YELLOW(""),
-    OTHER_COLOR("");
+    ORANGE(""), RED(""), WHITE(""), YELLOW(""), OTHER_COLOR("");
 
     private String name;
 
@@ -16,12 +10,13 @@ public enum Color {
     }
 
     public static Color getColor(String name) {
-        for(var item: Color.values()){
+        for (var item : Color.values()) {
             if (name.equals(item.name())) {
                 return item;
             }
         }
-        return OTHER_COLOR;}
+        return OTHER_COLOR;
+    }
 
     public String getName() {
         return name;
@@ -32,4 +27,3 @@ public enum Color {
     }
 
 }
-

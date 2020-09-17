@@ -18,7 +18,6 @@ import by.training.oop.flower.store.model.Good;
 import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Color;
 
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -48,6 +47,7 @@ public class ReadFromJSON {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(FLOWER_STORAGE_FILE_NAME));
         store.setFlowers(readFlowers(jsonObject));
     }
+
     public void readAccessoryToStore(Store accessory) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(ACCESSORY_STORAGE_FILE_NAME));
         accessory.setAccessories(readAccessories(jsonObject));
@@ -85,7 +85,7 @@ public class ReadFromJSON {
         }
         return flowers;
     }
-    
+
     private List<Accessory> readAccessories(JSONObject data) {
         JSONArray accessoriesJ = (JSONArray) data.get("accessories");
         List<Accessory> accessories = new ArrayList<>();
@@ -100,9 +100,5 @@ public class ReadFromJSON {
         }
         return accessories;
     }
-    
-    
-    
-
 
 }

@@ -5,23 +5,11 @@ import by.training.oop.flower.store.enums.FlowerKind;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Flower extends Good implements Comparable<Flower>{
+public class Flower extends Good implements Comparable<Flower> {
     FlowerKind flowerKind;
     LocalDate shipmentDate;
     FlowerLength length;
-//    Color color;
-//    Integer cost;
-//    Integer id;
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
-   
     public LocalDate getShipmentDate() {
         return shipmentDate;
     }
@@ -29,28 +17,6 @@ public class Flower extends Good implements Comparable<Flower>{
     public FlowerKind getFlowerKind() {
         return flowerKind;
     }
-
-//    public Color getColor() {
-//        return color;
-//    }
-//
-//    public void setColor(Color color) {
-//        this.color = color;
-//    }
-//
-//    public Integer getCost() {
-//        return cost;
-//    }
-//
-//    public void setCost(Integer cost) {
-//        this.cost = cost;
-//    }
-    
-//    public static String getCost(String name) {
-//        return name;}
-//    
-//    public static String getId(String name) {
-//        return name;}
 
     public void setFlowerKind(FlowerKind flowerKind) {
         this.flowerKind = flowerKind;
@@ -63,7 +29,6 @@ public class Flower extends Good implements Comparable<Flower>{
     public void setShipmentDate(LocalDate shipmentDate) {
         this.shipmentDate = shipmentDate;
     }
-    
 
     public FlowerLength getLength() {
         return length;
@@ -78,23 +43,10 @@ public class Flower extends Good implements Comparable<Flower>{
     }
 
     @Override
-    
-public int compareTo(Flower f) {
+
+    public int compareTo(Flower f) {
         if (getShipmentDate() == null || f.getShipmentDate() == null)
             return 0;
         return getShipmentDate().compareTo(f.getShipmentDate());
     }
 }
-
-
-
-//    public static String getShipmentDate(String name) {
-//        return name;}
-
-//    public static Color getColor(String string) {
-//        // TODO Auto-generated method stub
-//        return null;
-//    }
-
-
-

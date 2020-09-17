@@ -9,50 +9,36 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
 import by.training.oop.flower.store.model.Flower;
 
 //класс находит цветок с длиной стебля из заданного интервала
 public class Bouquet {
-    
-    List<Good> positions;
-    static class DateItem {
-        String datetime;}
-    
 
+    List<Good> positions;
+
+    static class DateItem {
+        String datetime;
+    }
 
     public Bouquet(List<Good> positions) {
         this.positions = positions;
     }
 
-
-
     public List<Flower> getFlowersInInterval(int leftBound, int rightBound) {
-        return positions.stream()
-                .filter(good -> good instanceof Flower)
-                .map(good -> (Flower) good)
-                .filter(flower -> flower.isInInterval(leftBound, rightBound))
-                .collect(Collectors.toList());
+        return positions.stream().filter(good -> good instanceof Flower).map(good -> (Flower) good)
+                .filter(flower -> flower.isInInterval(leftBound, rightBound)).collect(Collectors.toList());
     }
 
     public Integer calculatePrice() {
-        return positions.stream()
-                .mapToInt(good -> good.getCost())
-                .sum();
+        return positions.stream().mapToInt(good -> good.getCost()).sum();
     }
-    
+
     public void printCheck() {
         System.out.println("Check");
-        positions.stream()
-                .forEach(good -> System.out.println(good.getId() + " " + good.getCost()));
-        
+        positions.stream().forEach(good -> System.out.println(good.getId() + " " + good.getCost()));
+
     }
-    
-    
-        
-        
-        
-        
+
 //       Flower a, b;
 //       positions.stream()
 //       .filter(good -> good instanceof Flower)
@@ -60,9 +46,8 @@ public class Bouquet {
 //        .sorted(flower::compareByPrice)
 //        .forEach(good->System.out.printf("%s (%s) - %d \n", 
 //                good.getId(), good.getFlowerKind(), good.getShipmentDate()));
-    //}
-        
-        
+    // }
+
 //         positions.stream()
 //         .filter(good -> good instanceof Flower)
 //         .map(good -> (Flower) good)
@@ -83,6 +68,5 @@ public class Bouquet {
 //        // TODO Auto-generated method stub
 //        return null;
 //    }
-    
 
 }

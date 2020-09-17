@@ -1,12 +1,7 @@
 package by.training.oop.flower.store.enums;
 
-
 public enum FlowerKind {
-    ROSE(""),
-    LILAC(""),
-    TULIP(""),
-    CHRIZANTHEMUM(""),
-    OTHER_FLOWER("");
+    ROSE(""), LILAC(""), TULIP(""), CHRIZANTHEMUM(""), OTHER_FLOWER("");
 
     private String name;
 
@@ -15,7 +10,7 @@ public enum FlowerKind {
     }
 
     public static FlowerKind getFlowerKind(String name) {
-        for(var item: FlowerKind.values()){
+        for (var item : FlowerKind.values()) {
             if (name.equals(item.name())) {
                 return item;
             }

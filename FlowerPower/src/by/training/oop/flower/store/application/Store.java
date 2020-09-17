@@ -32,18 +32,18 @@ public class Store {
 
             if (flower.getId() == name) {
                 return flower;
-            } 
+            }
         }
         return null;
     }
-    
+
     public Accessory findAccessoryById(Integer name) {
 
         for (Accessory accessory : accessories) {
 
             if (accessory.getId() == name) {
                 return accessory;
-            } 
+            }
         }
         return null;
     }

@@ -3,10 +3,7 @@ package by.training.oop.flower.store.model;
 import java.util.List;
 
 public enum FlowerLength {
-    SHORT(10),
-    MIDDLE(20),
-    LONG(30),
-    UNKNOWN(0);
+    SHORT(10), MIDDLE(20), LONG(30), UNKNOWN(0);
 
     private final int length;
 
@@ -16,7 +13,7 @@ public enum FlowerLength {
 
     public static FlowerLength getLength(String length) {
 
-        for(var item: FlowerLength.values()){
+        for (var item : FlowerLength.values()) {
             if (Integer.parseInt(length) == item.length) {
                 return item;
             }

@@ -57,11 +57,11 @@ public class Office {
                     reader.readAccessoryToStore(store);
                     store.getAccessories().forEach(good -> {
                         Accessory accessory = (Accessory) good;
-                        System.out.println(accessory.getId() + " " + accessory.getColor() + " " + accessory.getAccessoryKind() + " "
-                                + accessory.getCost());
+                        System.out.println(accessory.getId() + " " + accessory.getColor() + " "
+                                + accessory.getAccessoryKind() + " " + accessory.getCost());
                     });
                     System.out.println("What do you prefer to add to your bouquet? Please, enter the ID below");
-                System.out.println("input \"end\" to stop making a bouquet");
+                    System.out.println("input \"end\" to stop making a bouquet");
                     break;
                 case "exit":
                     runFlag = false;
@@ -70,7 +70,7 @@ public class Office {
                 case "end":
                     if (currentBouquet != null && currentBouquet.size() > 0) {
                         Bouquet bouquet = new Bouquet(currentBouquet);
-                       
+
 //                        List<DateItem> dateList = new ArrayList<>();
 //                        dateList.add(new DateItem("2020-03-25"));
 //                        dateList.add(new DateItem("2019-01-27"));
@@ -80,13 +80,10 @@ public class Office {
 //                        bouquet.forEach(shipmentDate -> {
 //                            System.out.println(bouquet.shipmentDate);
 //                        });
-                        
-                        
-                        
+
                         bouquet.printCheck();
                         System.out.println("The bouquet prize is:" + " " + bouquet.calculatePrice());
-                        
-                        
+
                         System.out.println("enter the left bound and the right bound of the flowerLength interval");
                         Integer lb = Integer.valueOf(br.readLine());
                         Integer rb = Integer.valueOf(br.readLine());
@@ -95,13 +92,13 @@ public class Office {
                             System.out.println("The flowers in the bouquet with the length between " + lb + " and " + rb
                                     + " are: ");
                             for (int i = 0; i < flowerInInterval.size(); i++) {
-                                System.out.println(flowerInInterval.get(i).getId() + " "
-                                        + flowerInInterval.get(i).getFlowerKind() + " " + "Length =  "
-                                        + flowerInInterval.get(i).getLength().getLength());
+                                System.out.println(
+                                        flowerInInterval.get(i).getId() + " " + flowerInInterval.get(i).getFlowerKind()
+                                                + " " + "Length =  " + flowerInInterval.get(i).getLength().getLength());
                             }
                         } else {
                             System.out.println("There is no flower with the length between" + lb + " and " + rb);
-                        }                        
+                        }
 
                         currentBouquet = null;
 
@@ -130,11 +127,6 @@ public class Office {
 
                 }
 
-                // System.out.println((Store.findFlowerById((Integer.valueOf(s)),
-                // flower.getFlowers())).getCost());
-
-                // id.add(Integer.parseInt(s));
-
             } catch (NumberFormatException e) {
 
                 System.out.println("Wrong input");
@@ -144,31 +136,5 @@ public class Office {
             }
         }
 
-//            int n = bouquet.size();
-//            Integer cost = 0;
-//          for(int i=0; i<n; i++) {
-//              cost=cost + bouquet[i].getFlowers().getCost();
-//              System.out.println((bouquet.get(i)) + "b ");
-//          }
-//        int n = id.size();
-//        for(int i=0; i<n; i++) {
-//            System.out.println(id.get(i));
-//        }
-
-//        Scanner scanner = new Scanner(System.in);
-//        while (runFlag) {
-//            System.out.println("Input smth, or \"exit\" for exit");
-//            String input = scanner.next();
-//            switch (input) {
-//                case "exit" : runFlag = false;
-//                System.out.println("Store is offline");
-//                break;
-//                default : {
-//                    System.out.println("Store is online");
-//                }
-//
-//            }
-//        }
-//        loader.writeFromStoreToFile(store);
     }
 }
