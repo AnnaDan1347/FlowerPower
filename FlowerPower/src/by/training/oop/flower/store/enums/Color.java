@@ -1,4 +1,4 @@
-package by.training.oop.flower.store.model;
+package by.training.oop.flower.store.enums;
 
 public enum Color {
     ORANGE(""), RED(""), WHITE(""), YELLOW(""), OTHER_COLOR("");

@@ -1,6 +1,4 @@
-package by.training.oop.flower.store.model;
-
-import java.util.List;
+package by.training.oop.flower.store.enums;
 
 public enum FlowerLength {
     SHORT(10), MIDDLE(20), LONG(30), UNKNOWN(0);

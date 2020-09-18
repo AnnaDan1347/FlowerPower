@@ -1,6 +1,6 @@
 package by.training.oop.flower.store.model;
 
-
+import by.training.oop.flower.store.enums.Color;
 
 public abstract class Good {
     private Color color;

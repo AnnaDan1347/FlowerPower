@@ -2,7 +2,6 @@ package by.training.oop.flower.store.application;
 
 import by.training.oop.flower.store.model.Accessory;
 import by.training.oop.flower.store.model.Flower;
-import by.training.oop.flower.store.model.Good;
 
 import java.util.List;
 

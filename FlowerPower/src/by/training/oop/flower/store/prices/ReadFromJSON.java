@@ -12,9 +12,9 @@ import by.training.oop.flower.store.enums.AccessoryKind;
 import by.training.oop.flower.store.enums.FlowerKind;
 
 import by.training.oop.flower.store.model.Flower;
-import by.training.oop.flower.store.model.FlowerLength;
+import by.training.oop.flower.store.enums.FlowerLength;
 import by.training.oop.flower.store.model.Accessory;
-import by.training.oop.flower.store.model.Color;
+import by.training.oop.flower.store.enums.Color;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,21 +24,6 @@ public class ReadFromJSON {
 
     private static final String FLOWER_STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/Pricelist.json";
     private static final String ACCESSORY_STORAGE_FILE_NAME = "./src/by/training/oop/flower/store/resources/PricelistAccessory.json";
-//    public void writeFromStoreToFile(Store store) {
-//        // Creating a JSONObject object
-//        JSONObject jsonObject = new JSONObject();
-//        // Inserting key-value pairs into the JSON object
-//
-//        try {
-//            FileWriter file = new FileWriter(STORAGE_FILE_NAME);
-//            file.write(jsonObject.toJSONString());
-//            file.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("JSON file created: " + jsonObject);
-//
-//    }
 
     public void readFlowerToStore(Store store) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(readStringFromFile(FLOWER_STORAGE_FILE_NAME));

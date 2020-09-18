@@ -1,6 +1,7 @@
 package by.training.oop.flower.store.model;
 
 import by.training.oop.flower.store.enums.FlowerKind;
+import by.training.oop.flower.store.enums.FlowerLength;
 
 import java.time.LocalDate;
 
