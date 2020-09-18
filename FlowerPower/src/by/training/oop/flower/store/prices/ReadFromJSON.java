@@ -56,14 +56,15 @@ public class ReadFromJSON {
             FileReader reader = new FileReader(fileName);
             BufferedReader in = new BufferedReader(reader);
             String inputLine;
-            // построчно считываем результат в объект StringBuilder
             while ((inputLine = in.readLine()) != null) {
                 stringBuilder.append(inputLine);
             }
+            in.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return stringBuilder.toString();
+
     }
 
     private List<Flower> readFlowers(JSONObject data) {
