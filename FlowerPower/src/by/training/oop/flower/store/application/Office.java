@@ -10,10 +10,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
 
 public class Office {
 
@@ -26,6 +25,8 @@ public class Office {
     List<Good> currentBouquet;
 
     List<Flower> flowerInInterval;
+
+    List<Flower> sortedFlowers;
 
     public Office() {
         store = new Store();
@@ -58,7 +59,7 @@ public class Office {
                                 + accessory.getAccessoryKind() + " " + accessory.getCost());
                     });
                     System.out.println("What do you prefer to add to your bouquet? Please, enter the ID below");
-                    System.out.println("input \"end\" to stop making a bouquet");
+                    System.out.println("Input \"end\" to stop making a bouquet");
                     break;
                 case "exit":
                     runFlag = false;
@@ -68,16 +69,17 @@ public class Office {
                     if (currentBouquet != null && currentBouquet.size() > 0) {
                         Bouquet bouquet = new Bouquet(currentBouquet);
 
-////                        List<DateItem> dateList = new ArrayList<>();                       
-//                        Collections.
-//                        bouquet.forEach(shipmentDate -> {
-//                            System.out.println(bouquet.shipmentDate);
-//                        });
-
                         bouquet.printCheck();
-                        System.out.println("The bouquet prize is:" + " " + bouquet.calculatePrice());
+                        System.out.println("The bouquet prize is: "  + bouquet.calculatePrice());
+                        System.out.println("***********");
 
-                        System.out.println("enter the left bound and the right bound of the flowerLength interval");
+                        sortedFlowers = new ArrayList<Flower>(bouquet.getFlowersForSort());
+                        System.out.println("Flowers sorted by freshness:");
+                        sortedFlowers.stream().sorted(Comparator.comparing(Flower::getShipmentDate))
+                                .forEach((flower) -> System.out.println(flower.getId() + " " + flower.getFlowerKind()
+                                        + " " + flower.getShipmentDate()));
+
+                        System.out.println("Enter the left bound and the right bound of the flowerLength interval");
                         Integer lb = Integer.valueOf(br.readLine());
                         Integer rb = Integer.valueOf(br.readLine());
                         flowerInInterval = new ArrayList<Flower>((bouquet.getFlowersInInterval(lb, rb)));
@@ -90,13 +92,13 @@ public class Office {
                                                 + " " + "Length =  " + flowerInInterval.get(i).getLength().getLength());
                             }
                         } else {
-                            System.out.println("There is no flower with the length between" + lb + " and " + rb);
+                            System.out.println("There is no flower with the length between " + lb + " and " + rb);
                         }
 
                         currentBouquet = null;
 
                     } else {
-                        System.out.println("add flowers to bouquet");
+                        System.out.println("Add flowers to bouquet");
                     }
                     System.out.println("Enter \"new\" to start making a bouquet or \"exit\" to close the store");
 
