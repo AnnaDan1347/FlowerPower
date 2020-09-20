@@ -74,7 +74,7 @@ public class Office {
                         System.out.println("***********");
 
                         sortedFlowers = new ArrayList<Flower>(bouquet.getFlowersForSort());
-                        System.out.println("Flowers sorted by freshness:");
+                        System.out.println("Flowers in a bouquet sorted by freshness:");
                         sortedFlowers.stream().sorted(Comparator.comparing(Flower::getShipmentDate))
                                 .forEach((flower) -> System.out.println(flower.getId() + " " + flower.getFlowerKind()
                                         + " " + flower.getShipmentDate()));
@@ -96,6 +96,8 @@ public class Office {
                         }
 
                         currentBouquet = null;
+                        flowerInInterval = null;
+                        sortedFlowers = null;
 
                     } else {
                         System.out.println("Add flowers to bouquet");
