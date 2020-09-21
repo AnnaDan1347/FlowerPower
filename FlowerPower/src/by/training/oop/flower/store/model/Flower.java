@@ -5,7 +5,6 @@ import by.training.oop.flower.store.enums.FlowerLength;
 
 import java.time.LocalDate;
 
-
 public class Flower extends Good implements Comparable<Flower> {
     FlowerKind flowerKind;
     LocalDate shipmentDate;

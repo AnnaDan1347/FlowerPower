@@ -70,7 +70,7 @@ public class Office {
                         Bouquet bouquet = new Bouquet(currentBouquet);
 
                         bouquet.printCheck();
-                        System.out.println("The bouquet prize is: "  + bouquet.calculatePrice());
+                        System.out.println("The bouquet prize is: " + bouquet.calculatePrice());
                         System.out.println("***********");
 
                         sortedFlowers = new ArrayList<Flower>(bouquet.getFlowersForSort());
